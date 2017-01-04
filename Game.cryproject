@@ -1,0 +1,16 @@
+{
+    "content": {
+        "assets": [
+            "Game"
+        ],
+        "code": [
+            "Code"
+        ]
+    },
+    "info": {
+        "name": "EasyShooter"
+    },
+    "require": {
+        "engine": "engine-5.3"
+    }
+}
