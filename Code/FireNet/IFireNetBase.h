@@ -12,6 +12,22 @@ enum EFireNetItemType
 	EItem_Other,
 };
 
+// Invite types
+enum EFireNetInviteType
+{
+	EInvite_AddToFriends,
+	EInvite_PlayInGame,
+	EInvite_AddToClan,
+};
+
+// Chat message types
+enum EFireNetChatMsgType
+{
+	EMsg_GlobalChat,
+	EMsg_PrivateChat,
+	EMsg_ClanChat,
+};
+
 // Player status
 enum EFireNetPlayerStatus
 {
