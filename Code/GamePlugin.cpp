@@ -142,27 +142,44 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 	switch (event)
 	{
 	case FIRENET_EVENT_MASTER_SERVER_START_CONNECTION:
+	{
+		pEnv->pUIManager->pPageLoading->SetLoadingText("@connecting_to_master_server");
+		pEnv->pUIManager->LoadPage("LoadingPage");
 		break;
+	}
 	case FIRENET_EVENT_MASTER_SERVER_CONNECTED:
 	{
+		pEnv->pUIManager->UnloadPage("LoadingPage");
 		pEnv->pUIManager->LoadPage("AuthorizationPage");
 		break;
 	}
 	case FIRENET_EVENT_MASTER_SERVER_CONNECTION_ERROR:
+	{
+		pEnv->pUIManager->UnloadAll();
 		break;
+	}
 	case FIRENET_EVENT_MASTER_SERVER_DISCONNECTED:
+	{
+		pEnv->pUIManager->UnloadAll();
 		break;
+	}
 	case FIRENET_EVENT_AUTHORIZATION_COMPLETE:
 	{
 		pEnv->pUIManager->UnloadPage("AuthorizationPage");
 		break;
 	}
 	case FIRENET_EVENT_AUTHORIZATION_FAILED:
+	{
 		break;
+	}
 	case FIRENET_EVENT_REGISTRATION_COMPLETE:
+	{
 		break;
+	}
 	case FIRENET_EVENT_REGISTRATION_FAILED:
+	{
 		break;
+	}
 	case FIRENET_EVENT_UPDATE_PROFILE:
 		break;
 	case FIRENET_EVENT_CREATE_PROFILE_COMPLETE:

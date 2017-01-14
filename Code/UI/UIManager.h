@@ -29,6 +29,9 @@ public:
 	void HidePage(const char* name);
 	void ReloadPage(const char* name);
 
+	void HideAll();
+	void UnloadAll();
+
 	int GetPagesCount();
 	IUIPage* GetPage(const char* name);
 public:

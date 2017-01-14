@@ -65,7 +65,7 @@ void CPageAuthorization::UnloadPage()
 	}
 	else
 	{
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[%s] Failed load page. UIElement not found", GetName());
+		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[%s] Failed unload page. UIElement not found", GetName());
 	}
 }
 

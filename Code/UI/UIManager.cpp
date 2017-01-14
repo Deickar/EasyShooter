@@ -135,6 +135,22 @@ void CUIManager::ReloadPage(const char * name)
 	}
 }
 
+void CUIManager::HideAll()
+{
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
+	{
+		(*it)->HidePage();
+	}
+}
+
+void CUIManager::UnloadAll()
+{
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
+	{
+		(*it)->UnloadPage();
+	}
+}
+
 int CUIManager::GetPagesCount()
 {
 	return m_Pages.size();
