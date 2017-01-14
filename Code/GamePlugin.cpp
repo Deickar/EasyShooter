@@ -137,141 +137,98 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 
 void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 {
+	CryLog("[FireNetEventListener] OnEvent(%d)", event);
+
 	switch (event)
 	{
 	case FIRENET_EVENT_MASTER_SERVER_START_CONNECTION:
-	{
 		break;
-	}
 	case FIRENET_EVENT_MASTER_SERVER_CONNECTED:
 	{
-		CryLog("[FireNet] Success connect to FireNet");
+		pEnv->pUIManager->LoadPage("AuthorizationPage");
 		break;
 	}
 	case FIRENET_EVENT_MASTER_SERVER_CONNECTION_ERROR:
-	{
-		int reason = args.GetInt();
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[FireNet] Can't connect to FireNet. Reason %d", reason);
 		break;
-	}
 	case FIRENET_EVENT_MASTER_SERVER_DISCONNECTED:
-	{
-		int reason = args.GetInt();
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[FireNet] Connection with FireNet lost. Reason %d", reason);
 		break;
-	}
 	case FIRENET_EVENT_AUTHORIZATION_COMPLETE:
 	{
+		pEnv->pUIManager->UnloadPage("AuthorizationPage");
 		break;
 	}
 	case FIRENET_EVENT_AUTHORIZATION_FAILED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_REGISTRATION_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_REGISTRATION_FAILED:
-	{
 		break;
-	}
+	case FIRENET_EVENT_UPDATE_PROFILE:
+		break;
 	case FIRENET_EVENT_CREATE_PROFILE_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_CREATE_PROFILE_FAILED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GET_PROFILE_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GET_PROFILE_FAILED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GET_SHOP_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GET_SHOP_FAILED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_BUY_ITEM_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_BUY_ITEM_FAILED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_REMOVE_ITEM_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_REMOVE_ITEM_FAILED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_SEND_INVITE_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_SEND_INVITE_FAILED:
-	{
 		break;
-	}
-	case FIRENET_EVENT_ADD_FRIEND_COMPLETE:
-	{
+	case FIRENET_EVENT_DECLINE_INVITE_COMPLETE:
 		break;
-	}
-	case FIRENET_EVENT_ADD_FRIEND_FAILED:
-	{
+	case FIRENET_EVENT_DECLINE_INVITE_FAILED:
 		break;
-	}
+	case FIRENET_EVENT_ACCEPT_INVITE_COMPLETE:
+		break;
+	case FIRENET_EVENT_ACCEPT_INVITE_FAILED:
+		break;
 	case FIRENET_EVENT_REMOVE_FRIEND_COMPLETE:
-	{
 		break;
-	}
 	case FIRENET_EVENT_REMOVE_FRIEND_FAILED:
-	{
 		break;
-	}
-	case FIRENET_EVENT_CONSOLE_COMMAND_RECIVED:
-	{
+	case FIRENET_EVENT_SEND_CHAT_MSG_COMPLETE:
 		break;
-	}
-	case FIRENET_EVENT_SERVER_MESSAGE_RECIVED:
-	{
+	case FIRENET_EVENT_SEND_CHAT_MSG_FAILED:
 		break;
-	}
-	case FIRENET_EVENT_GAME_SERVER_INFO_RECIVED:
-	{
+	case FIRENET_EVENT_GET_GAME_SERVER_COMPLETE:
 		break;
-	}
+	case FIRENET_EVENT_GET_GAME_SERVER_FAILED:
+		break;
+	case FIRENET_EVENT_GLOBAL_CHAT_MSG_RECEIVED:
+		break;
+	case FIRENET_EVENT_PRIVATE_CHAT_MSG_RECEIVED:
+		break;
+	case FIRENET_EVENT_CLAN_CHAT_MSG_RECEIVED:
+		break;
+	case FIRENET_EVENT_CONSOLE_COMMAND_RECEIVED:
+		break;
+	case FIRENET_EVENT_SERVER_MESSAGE_RECEIVED:
+		break;
 	case FIRENET_EVENT_GAME_SERVER_START_CONNECTION:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GAME_SERVER_CONNECTED:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GAME_SERVER_CONNECTION_ERROR:
-	{
 		break;
-	}
 	case FIRENET_EVENT_GAME_SERVER_DISCONNECTED:
-	{
 		break;
-	}
 	default:
-	{
 		break;
-	}
 	}
 }
 

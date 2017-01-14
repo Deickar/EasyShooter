@@ -82,7 +82,7 @@ bool CUIManager::Init()
 
 void CUIManager::LoadPage(const char * name)
 {
-	for (auto it = m_Pages.begin(); it != m_Pages.begin(); ++it)
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
 	{
 		if (strcmp((*it)->GetName(), name) == 0)
 		{
@@ -93,7 +93,7 @@ void CUIManager::LoadPage(const char * name)
 
 void CUIManager::UnloadPage(const char * name)
 {
-	for (auto it = m_Pages.begin(); it != m_Pages.begin(); ++it)
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
 	{
 		if (strcmp((*it)->GetName(), name) == 0)
 		{
@@ -104,7 +104,7 @@ void CUIManager::UnloadPage(const char * name)
 
 void CUIManager::ShowPage(const char * name)
 {
-	for (auto it = m_Pages.begin(); it != m_Pages.begin(); ++it)
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
 	{
 		if (strcmp((*it)->GetName(), name) == 0)
 		{
@@ -115,7 +115,7 @@ void CUIManager::ShowPage(const char * name)
 
 void CUIManager::HidePage(const char * name)
 {
-	for (auto it = m_Pages.begin(); it != m_Pages.begin(); ++it)
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
 	{
 		if (strcmp((*it)->GetName(), name) == 0)
 		{
@@ -126,7 +126,7 @@ void CUIManager::HidePage(const char * name)
 
 void CUIManager::ReloadPage(const char * name)
 {
-	for (auto it = m_Pages.begin(); it != m_Pages.begin(); ++it)
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
 	{
 		if (strcmp((*it)->GetName(), name) == 0)
 		{
@@ -142,7 +142,7 @@ int CUIManager::GetPagesCount()
 
 IUIPage * CUIManager::GetPage(const char * name)
 {
-	for (auto it = m_Pages.begin(); it != m_Pages.begin(); ++it)
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
 	{
 		if (strcmp((*it)->GetName(), name) == 0)
 		{

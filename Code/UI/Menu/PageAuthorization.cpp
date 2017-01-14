@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "PageAuthorization.h"
+#include "FireNet/IFireNetCore.h"
 
 CPageAuthorization::~CPageAuthorization()
 {
@@ -121,9 +122,8 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			CryLog("Try authorization by login (%s) and password (%s)", login, password);
-
-			// TODO
+			CryLog("[AuthorizationPage] Try authorization by login (%s) and password (%s)", login, password);
+			gEnv->pFireNet->Authorization(login, password);
 		}
 	}
 	else if (strcmp(event.sDisplayName, "OnRegister") == 0)
@@ -133,9 +133,8 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			CryLog("Try registration by login (%s) and password (%s)", login, password);
-
-			// TODO
+			CryLog("[AuthorizationPage] Try registration by login (%s) and password (%s)", login, password);
+			gEnv->pFireNet->Registration(login, password);
 		}
 	}
 	else if (strcmp(event.sDisplayName, "OnExit") == 0)
