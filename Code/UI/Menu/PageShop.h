@@ -27,6 +27,5 @@ public:
 	virtual void ReloadPage() override;
 	//
 private:
-	IUIElement* pElement;
 	CPageShopEventListener m_EventListener;
 };

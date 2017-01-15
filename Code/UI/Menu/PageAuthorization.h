@@ -27,6 +27,5 @@ public:
 	virtual void ReloadPage() override;
 	// ~IUIPage
 private:
-	IUIElement* pElement;
 	CPageAuthorizationEventListener m_EventListener;
 };

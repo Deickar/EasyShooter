@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "GamePlugin.h"
+
 #include "UI/UIManager.h"
 #include "UI/Menu/PageLoading.h"
 
@@ -174,6 +175,13 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 	}
 	case FIRENET_EVENT_REGISTRATION_COMPLETE:
 	{
+		auto pElement = pEnv->pUIManager->GetUIElement("AuthorizationPage");
+
+		if (pElement)
+		{
+			pElement->CallFunction("ShowLoginPage");
+		}
+
 		break;
 	}
 	case FIRENET_EVENT_REGISTRATION_FAILED:

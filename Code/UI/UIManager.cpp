@@ -168,3 +168,16 @@ IUIPage * CUIManager::GetPage(const char * name)
 
 	return nullptr;
 }
+
+IUIElement * CUIManager::GetUIElement(const char * name)
+{
+	for (auto it = m_Pages.begin(); it != m_Pages.end(); ++it)
+	{
+		if (strcmp((*it)->GetName(), name) == 0)
+		{
+			return (*it)->GetUIElement();
+		}
+	}
+
+	return nullptr;
+}

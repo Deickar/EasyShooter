@@ -15,6 +15,9 @@ public:
 	virtual void HidePage() = 0;
 	virtual void ReloadPage() = 0;
 	virtual const char* GetName() { return this->m_Name; };
+	virtual IUIElement* GetUIElement() { return this->pElement; };
 private:
 	const char* m_Name;
+public:
+	IUIElement* pElement;
 };

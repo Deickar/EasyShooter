@@ -1,5 +1,7 @@
 #pragma once
 
+#include <CrySystem/Scaleform/IFlashUI.h>
+
 class IUIPage;
 
 // Menu pages
@@ -34,6 +36,7 @@ public:
 
 	int GetPagesCount();
 	IUIPage* GetPage(const char* name);
+	IUIElement* GetUIElement(const char* name);
 public:
 	CPageAuthorization* pPageAuthorization;
 	CPageInGame* pPageInGame;

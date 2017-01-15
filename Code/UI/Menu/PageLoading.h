@@ -21,7 +21,6 @@ public:
 	void SetBackground(const char* name) { m_Background = name; };
 	void SetLoadingText(const char* text) { m_LoadingText = text; };
 private:
-	IUIElement* pElement;
 	const char* m_Background;
 	const char* m_LoadingText;
 };
