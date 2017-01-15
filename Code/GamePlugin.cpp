@@ -194,6 +194,13 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 	case FIRENET_EVENT_AUTHORIZATION_COMPLETE:
 	{
 		pEnv->pUIManager->UnloadPage("AuthorizationPage");
+		pEnv->pUIManager->LoadPage("ProfilePage");
+		break;
+	}
+	case FIRENET_EVENT_AUTHORIZATION_COMPLETE_WITH_PROFILE : 
+	{
+		pEnv->pUIManager->UnloadPage("AuthorizationPage");
+		pEnv->pUIManager->LoadPage("MainPage");
 		break;
 	}
 	case FIRENET_EVENT_AUTHORIZATION_FAILED:

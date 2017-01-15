@@ -19,6 +19,8 @@ enum EFireNetEvents
 
 	//! Event when authorization complete
 	FIRENET_EVENT_AUTHORIZATION_COMPLETE,
+	//! Event when authorization complete and profile exist
+	FIRENET_EVENT_AUTHORIZATION_COMPLETE_WITH_PROFILE,
 	//! Event when authorization failed
 	FIRENET_EVENT_AUTHORIZATION_FAILED,
 	//! Event when registration complete
@@ -84,6 +86,8 @@ enum EFireNetEvents
 	FIRENET_EVENT_CONSOLE_COMMAND_RECEIVED,
 	//! Event when client received server message
 	FIRENET_EVENT_SERVER_MESSAGE_RECEIVED,
+	//! Event when client received game server information
+	FIRENET_EVENT_GAME_SERVER_INFO_RECEIVED,
 
 	//! Event when start connection to game server
 	FIRENET_EVENT_GAME_SERVER_START_CONNECTION,
@@ -164,5 +168,5 @@ struct SFireNetEventArgs
 
 struct IFireNetListener
 {
-	virtual void OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args) = 0;
+	virtual void OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args = SFireNetEventArgs()) = 0;
 };

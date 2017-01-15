@@ -29,7 +29,7 @@ public:
 	// ~ISystemEventListener
 
 	// IFireNetEventListener
-	virtual void OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args);
+	virtual void OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args = SFireNetEventArgs());
 	// ~IFireNetEventListener
 
 public:
