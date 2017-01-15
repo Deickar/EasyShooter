@@ -5,7 +5,11 @@ CPageShop::~CPageShop()
 {
 	UnloadPage();
 
-	SAFE_DELETE(pElement);
+	if (pElement)
+	{
+		pElement->RemoveEventListener(&m_EventListener);
+		SAFE_DELETE(pElement);
+	}
 }
 
 void CPageShop::Init()
@@ -59,7 +63,6 @@ void CPageShop::UnloadPage()
 	if (pElement)
 	{
 		pElement->SetVisible(false);
-		pElement->RemoveEventListener(&m_EventListener);
 		pElement->Unload();
 	}
 	else

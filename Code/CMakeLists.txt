@@ -122,6 +122,8 @@ set (SourceGroup_UI_Menu
 	"UI/Menu/PageSettings.h"
 	"UI/Menu/PageShop.cpp"
 	"UI/Menu/PageShop.h"
+	"UI/Menu/PageError.cpp"
+	"UI/Menu/PageError.h"
 )
 source_group("UI\\Menu" FILES ${SourceGroup_UI_Menu})
 

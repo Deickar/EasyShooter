@@ -14,6 +14,8 @@ class CPageProfile;
 class CPageServerSearch;
 class CPageSettings;
 class CPageShop;
+class CPageError;
+
 // HUD
 class CPageHUD;
 
@@ -48,6 +50,7 @@ public:
 	CPageSettings* pPageSettings;
 	CPageShop* pPageShop;
 	CPageHUD* pPageHUD;
+	CPageError* pPageError;
 private:
 	std::vector<IUIPage*> m_Pages;
 

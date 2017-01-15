@@ -6,7 +6,11 @@ CPageAuthorization::~CPageAuthorization()
 {
 	UnloadPage();
 
-	SAFE_DELETE(pElement);
+	if (pElement)
+	{
+		pElement->RemoveEventListener(&m_EventListener);
+		SAFE_DELETE(pElement);
+	}
 }
 
 void CPageAuthorization::Init()
@@ -60,7 +64,6 @@ void CPageAuthorization::UnloadPage()
 	if (pElement)
 	{
 		pElement->SetVisible(false);
-		pElement->RemoveEventListener(&m_EventListener);
 		pElement->Unload();
 	}
 	else

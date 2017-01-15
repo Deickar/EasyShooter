@@ -11,6 +11,7 @@
 #include "Menu/PageServerSearch.h"
 #include "Menu/PageSettings.h"
 #include "Menu/PageShop.h"
+#include "Menu/PageError.h"
 
 #include "HUD/PageHUD.h"
 
@@ -33,6 +34,7 @@ CUIManager::CUIManager()
 		pPageSettings = new CPageSettings("SettingsPage");
 		pPageShop = new CPageShop("ShopPage");
 		pPageHUD = new CPageHUD("HUDPage");
+		pPageError = new CPageError("ErrorPage");
 
 		Init();
 	}
@@ -53,6 +55,7 @@ CUIManager::~CUIManager()
 	SAFE_DELETE(pPageServerSearch);
 	SAFE_DELETE(pPageSettings);
 	SAFE_DELETE(pPageShop);
+	SAFE_DELETE(pPageError);
 }
 
 bool CUIManager::Init()
@@ -69,6 +72,7 @@ bool CUIManager::Init()
 		m_Pages.push_back((IUIPage*)pPageSettings);
 		m_Pages.push_back((IUIPage*)pPageShop);
 		m_Pages.push_back((IUIPage*)pPageHUD);
+		m_Pages.push_back((IUIPage*)pPageError);
 
 		CryLogAlways(TITLE "Success init UI manager. Loaded %d pages", m_Pages.size());
 

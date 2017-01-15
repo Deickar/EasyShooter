@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "PageServerSearch.h"
+#include "PageError.h"
 
-CPageServerSearch::~CPageServerSearch()
+CPageError::~CPageError()
 {
 	UnloadPage();
 
@@ -12,7 +12,7 @@ CPageServerSearch::~CPageServerSearch()
 	}
 }
 
-void CPageServerSearch::Init()
+void CPageError::Init()
 {
 	CryLog("[%s] Init()", GetName());
 
@@ -37,7 +37,7 @@ void CPageServerSearch::Init()
 	}
 }
 
-void CPageServerSearch::LoadPage()
+void CPageError::LoadPage()
 {
 	CryLog("[%s] LoadPage()", GetName());
 
@@ -47,16 +47,16 @@ void CPageServerSearch::LoadPage()
 
 		// Call load background function
 		SUIArguments args;
-		args.AddArgument("backgrounds/main_menu.png");
+		args.AddArgument("backgrounds/error.png");
 		pElement->CallFunction("LoadBackground", args);
 	}
 	else
 	{
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[%s] Failed unload page. UIElement not found", GetName());
+		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[%s] Failed load page. UIElement not found", GetName());
 	}
 }
 
-void CPageServerSearch::UnloadPage()
+void CPageError::UnloadPage()
 {
 	CryLog("[%s] UnloadPage()", GetName());
 
@@ -67,11 +67,11 @@ void CPageServerSearch::UnloadPage()
 	}
 	else
 	{
-		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[%s] Failed load page. UIElement not found", GetName());
+		CryWarning(VALIDATOR_MODULE_GAME, VALIDATOR_ERROR, "[%s] Failed unload page. UIElement not found", GetName());
 	}
 }
 
-void CPageServerSearch::ShowPage()
+void CPageError::ShowPage()
 {
 	CryLog("[%s] ShowPage()", GetName());
 
@@ -85,7 +85,7 @@ void CPageServerSearch::ShowPage()
 	}
 }
 
-void CPageServerSearch::HidePage()
+void CPageError::HidePage()
 {
 	CryLog("[%s] HidePage()", GetName());
 
@@ -99,7 +99,7 @@ void CPageServerSearch::HidePage()
 	}
 }
 
-void CPageServerSearch::ReloadPage()
+void CPageError::ReloadPage()
 {
 	CryLog("[%s] ReloadPage()", GetName());
 
@@ -113,11 +113,12 @@ void CPageServerSearch::ReloadPage()
 	}
 }
 
-void CPageServerSearchEventListener::OnUIEvent(IUIElement * pSender, const SUIEventDesc & event, const SUIArguments & args)
+void CPageErrorEventListener::OnUIEvent(IUIElement * pSender, const SUIEventDesc & event, const SUIArguments & args)
 {
 	CryLog("[UIEvents] <%s> event called from flash", event.sDisplayName);
 
-	if (strcmp(event.sDisplayName, "OnEvent") == 0)
+	if (strcmp(event.sDisplayName, "OnAccept") == 0)
 	{
+		gEnv->pSystem->Quit();
 	}
 }

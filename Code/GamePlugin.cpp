@@ -138,8 +138,6 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 
 void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 {
-	CryLog("[FireNetEventListener] OnEvent(%d)", event);
-
 	switch (event)
 	{
 	case FIRENET_EVENT_MASTER_SERVER_START_CONNECTION:
@@ -157,11 +155,40 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 	case FIRENET_EVENT_MASTER_SERVER_CONNECTION_ERROR:
 	{
 		pEnv->pUIManager->UnloadAll();
+		pEnv->pUIManager->LoadPage("ErrorPage");
+
+		int reason = args.GetInt();
+		auto pElement = pEnv->pUIManager->GetUIElement("ErrorPage");
+
+		if (pElement)
+		{
+			SUIArguments errorString;
+
+			if (reason == 0)
+				errorString.AddArgument("@ui_connection_timeout");
+			else if (reason == 1)
+				errorString.AddArgument("@ui_cant_spawn_network_thread");
+
+
+			pElement->CallFunction("SetErrorText", errorString);
+		}
+
 		break;
 	}
 	case FIRENET_EVENT_MASTER_SERVER_DISCONNECTED:
 	{
 		pEnv->pUIManager->UnloadAll();
+		pEnv->pUIManager->LoadPage("ErrorPage");
+
+		auto pElement = pEnv->pUIManager->GetUIElement("ErrorPage");
+
+		if (pElement)
+		{
+			SUIArguments errorString;
+			errorString.AddArgument("@ui_lose_connection_with_master_server");
+			pElement->CallFunction("SetErrorText", errorString);
+		}
+
 		break;
 	}
 	case FIRENET_EVENT_AUTHORIZATION_COMPLETE:
@@ -171,6 +198,25 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 	}
 	case FIRENET_EVENT_AUTHORIZATION_FAILED:
 	{
+		int reason = args.GetInt();
+		auto pElement = pEnv->pUIManager->GetUIElement("AuthorizationPage");
+
+		if (pElement)
+		{
+			SUIArguments errorString;
+
+			if (reason == 0)
+				errorString.AddArgument("@ui_login_not_found");
+			else if (reason == 1)
+				errorString.AddArgument("@ui_account_blocked");
+			else if (reason == 2)
+				errorString.AddArgument("@ui_incorrect_password");
+			else if (reason == 3)
+				errorString.AddArgument("@ui_double_authorization");
+
+			pElement->CallFunction("SetServerResultText", errorString);
+		}
+
 		break;
 	}
 	case FIRENET_EVENT_REGISTRATION_COMPLETE:
@@ -180,12 +226,34 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 		if (pElement)
 		{
 			pElement->CallFunction("ShowLoginPage");
+
+			SUIArguments resultString;
+			resultString.AddArgument("@ui_registration_complete");
+
+			pElement->CallFunction("SetServerResultText", resultString);
 		}
 
 		break;
 	}
 	case FIRENET_EVENT_REGISTRATION_FAILED:
 	{
+		int reason = args.GetInt();
+		auto pElement = pEnv->pUIManager->GetUIElement("AuthorizationPage");
+
+		if (pElement)
+		{
+			SUIArguments errorString;
+
+			if (reason == 0)
+				errorString.AddArgument("@ui_login_alredy_register");
+			else if (reason == 1)
+				errorString.AddArgument("@ui_cant_create_account");
+			else if (reason == 2)
+				errorString.AddArgument("@ui_double_registration");
+
+			pElement->CallFunction("SetServerResultText", errorString);
+		}
+
 		break;
 	}
 	case FIRENET_EVENT_UPDATE_PROFILE:
