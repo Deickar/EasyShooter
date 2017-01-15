@@ -1,0 +1,8 @@
+<cryasset>
+ <AssetMetadata version="0" type="Texture" guid="{3BCC28C2-CD14-0052-BF30-B5BB3369A617}" source="grain_bayer_mul.tif">
+  <Files>
+   <File path="grain_bayer_mul.dds"/>
+  </Files>
+  <Details />
+ </AssetMetadata>
+</cryasset>

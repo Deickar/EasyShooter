@@ -1,0 +1,8 @@
+<cryasset>
+ <AssetMetadata version="0" type="Texture" guid="{BF8935B4-56B1-BE53-B65E-C94CB899214D}" source="hex.tif">
+  <Files>
+   <File path="hex.dds"/>
+  </Files>
+  <Details />
+ </AssetMetadata>
+</cryasset>

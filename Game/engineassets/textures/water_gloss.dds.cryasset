@@ -1,0 +1,8 @@
+<cryasset>
+ <AssetMetadata version="0" type="Texture" guid="{20AF62EB-3DD8-0746-7F56-386F4D7F4D2D}" source="water_gloss.tif">
+  <Files>
+   <File path="water_gloss.dds"/>
+  </Files>
+  <Details />
+ </AssetMetadata>
+</cryasset>

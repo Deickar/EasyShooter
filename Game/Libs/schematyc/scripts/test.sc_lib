@@ -1,0 +1,12 @@
+<schematyc>
+ <version value="105"/>
+ <guid value="fb7366ef-76b9-40c4-aac7-ad66d3395d94"/>
+ <scope value=""/>
+ <root>
+  <elementType value="Module"/>
+  <guid value="1a9538e5-8e96-4200-970c-b93b49c3a73a"/>
+  <name value="Test"/>
+  <extensions />
+  <children />
+ </root>
+</schematyc>

@@ -1,11 +1,13 @@
 # Temporary directories
 /Backup/*
-/bin/*
 /Solutions/*
 /Editor/*
-/Game/*
 /logbackups/*
 /user/*
 
 # Log files
 *.log
+
+# Temp files
+*.ilk
+*.pdb

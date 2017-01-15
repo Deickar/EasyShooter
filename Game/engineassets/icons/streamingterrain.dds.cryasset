@@ -1,0 +1,8 @@
+<cryasset>
+ <AssetMetadata version="0" type="Texture" guid="{6C49A1E7-F718-ADF2-BE7D-EBD6A9E32F4A}" source="streamingterrain.tif">
+  <Files>
+   <File path="streamingterrain.dds"/>
+  </Files>
+  <Details />
+ </AssetMetadata>
+</cryasset>
