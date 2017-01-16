@@ -125,7 +125,6 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			CryLog("[AuthorizationPage] Try authorization by login (%s) and password (%s)", login, password);
 			gEnv->pFireNet->Authorization(login, password);
 		}
 	}
@@ -136,7 +135,6 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			CryLog("[AuthorizationPage] Try registration by login (%s) and password (%s)", login, password);
 			gEnv->pFireNet->Registration(login, password);
 		}
 	}
