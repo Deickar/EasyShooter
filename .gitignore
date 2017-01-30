@@ -4,9 +4,11 @@
 /Editor/*
 /logbackups/*
 /user/*
+/user(1)/*
 
 # Log files
 *.log
+*.dmp
 
 # Temp files
 *.ilk
