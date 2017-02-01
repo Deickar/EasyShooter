@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{70B87AEF-D3D8-3297-4B90-635E5E3035FC}" source="waterfoam.tif">
-  <Files>
-   <File path="waterfoam.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

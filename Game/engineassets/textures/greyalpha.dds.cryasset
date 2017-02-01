@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{42E28C60-3F6C-EE60-DD85-852D3C362D97}" source="greyalpha.tif">
-  <Files>
-   <File path="greyalpha.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

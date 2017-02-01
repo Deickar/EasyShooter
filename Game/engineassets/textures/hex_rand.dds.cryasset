@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{185AA996-32FE-B176-B9D9-647990D8BF10}" source="hex_rand.tif">
-  <Files>
-   <File path="hex_rand.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

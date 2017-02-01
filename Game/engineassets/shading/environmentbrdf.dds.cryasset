@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{B7026ECD-E9F8-E7C8-2D1C-100C053008C2}" source="environmentbrdf.tif">
-  <Files>
-   <File path="environmentbrdf.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

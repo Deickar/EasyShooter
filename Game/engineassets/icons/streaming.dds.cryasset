@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{F2878B55-833E-6EBE-F322-74DBDAB10433}" source="streaming.tif">
-  <Files>
-   <File path="streaming.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

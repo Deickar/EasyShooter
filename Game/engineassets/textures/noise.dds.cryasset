@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{538CACA5-352D-6209-1FEF-65A105B36656}" source="noise.tif">
-  <Files>
-   <File path="noise.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

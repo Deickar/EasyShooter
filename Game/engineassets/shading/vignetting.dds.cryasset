@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{652FEB0C-7618-0026-FC39-96E52E9894E1}" source="vignetting.tif">
-  <Files>
-   <File path="vignetting.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

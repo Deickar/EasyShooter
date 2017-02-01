@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{F0CAF994-8C20-5BF0-D150-5154DA3F8130}" source="fogvolshadowjitter.tif">
-  <Files>
-   <File path="fogvolshadowjitter.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>

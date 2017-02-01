@@ -1,8 +1,0 @@
-<cryasset>
- <AssetMetadata version="0" type="Texture" guid="{122AD5D1-D817-449B-9E8C-C68D09327300}" source="generic_reflections.tif">
-  <Files>
-   <File path="generic_reflections.dds"/>
-  </Files>
-  <Details />
- </AssetMetadata>
-</cryasset>
