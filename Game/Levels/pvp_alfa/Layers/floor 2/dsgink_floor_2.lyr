@@ -1,3 +1,3 @@
 <ObjectLayer>
- <Layer Name="DSGInk_Floor_2" FullName="Floor 2/DSGInk_Floor_2" GUID="{340B340A-54F9-ACC5-7DD6-C397DDD9A5BE}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="0" Color="65535" ParentGUID="{80DDF33C-6604-2E71-0140-FAD12232495F}"/>
+ <Layer Name="DSGInk_Floor_2" FullName="Floor 2/DSGInk_Floor_2" GUID="{340B340A-54F9-ACC5-7DD6-C397DDD9A5BE}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="0" Color="65535" ParentGUID="{23FA53FC-183C-622F-291E-C6B7C5C679AB}"/>
 </ObjectLayer>

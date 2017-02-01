@@ -1,3 +1,23 @@
 <ObjectLayer>
- <Layer Name="Main" FullName="Main" GUID="{6D8138C6-173D-488F-2D95-E01E77D33B19}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1"/>
+ <Layer Name="Main" FullName="Main" GUID="{6D8138C6-173D-488F-2D95-E01E77D33B19}" Hidden="0" Frozen="0" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1">
+  <LayerObjects>
+   <Object Type="EnvironmentProbe" Layer="Main" LayerGUID="{6D8138C6-173D-488F-2D95-E01E77D33B19}" Id="{1FF31C5C-92A0-A660-F813-7E3009E5A8FA}" Name="EnvironmentProbe1" Pos="155.44569,42.433643,38.901733" FloorNumber="-1" Rotate="1,0,0,0" Scale="50,50,50" ColorRGB="65535" Flags="4" cubemap_resolution="512" preview_cubemap="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="EnvironmentLight" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{0D3D1840-D239-411E-8738-14C56CCCEE2C}">
+      <Active value="true"/>
+      <BoxSize>
+       <Element value="50"/>
+       <Element value="50"/>
+       <Element value="50"/>
+      </BoxSize>
+      <IgnoreVisAreas value="false"/>
+      <SortPriority value="0"/>
+      <AttentuationFalloffMax value="1"/>
+      <Cubemap value="Textures/cubemaps/pvp_alfa/environmentprobe1_cm.dds"/>
+     </Component>
+    </Components>
+   </Object>
+  </LayerObjects>
+ </Layer>
 </ObjectLayer>

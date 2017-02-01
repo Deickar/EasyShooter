@@ -5,6 +5,7 @@
 /logbackups/*
 /user/*
 /user(1)/*
+/Game/engineassets/*
 
 # Log files
 *.log
