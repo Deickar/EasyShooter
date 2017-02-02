@@ -1,6 +1,6 @@
 <download name="pvp_alfa_0" type="Map">
  <index src="filelist.xml" dest="filelist.xml"/>
  <files>
-  <file src="level.pak" dest="level.pak" size="136465" md5="a1f37838bcf83568c96dfafd61616384"/>
+  <file src="level.pak" dest="level.pak" size="359909" md5="1ec17639102be271196a824ad78a2f9f"/>
  </files>
 </download>
