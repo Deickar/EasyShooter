@@ -1,0 +1,8 @@
+<cryasset>
+ <AssetMetadata version="0" type="Texture" guid="{62091011-1843-88F3-310C-93DEF3825376}" source="mainprobe_cm.tif">
+  <Files>
+   <File path="mainprobe_cm.dds"/>
+  </Files>
+  <Details />
+ </AssetMetadata>
+</cryasset>
