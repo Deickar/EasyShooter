@@ -49,10 +49,14 @@ public:
 	};
 
 	template<class T>
-	static void RegisterEntityWithDefaultComponent(const char *name)
+	static void RegisterEntityWithDefaultComponent(const char *name, const char* category = nullptr, const char* icon = nullptr, bool iconOnTop = false)
 	{
 		IEntityClassRegistry::SEntityClassDesc clsDesc;
 		clsDesc.sName = name;
+
+		clsDesc.editorClassInfo.sCategory = category;
+		clsDesc.editorClassInfo.sIcon = icon;
+		clsDesc.editorClassInfo.bIconOnTop = iconOnTop;
 
 		static CObjectCreator<T> _creator;
 

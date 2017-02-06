@@ -43,6 +43,8 @@ source_group("Entities\\Gameplay\\Weapons" FILES ${SourceGroup_WeaponEntities})
 set (SourceGroup_GameplayEntities
 	"Entities/Gameplay/SpawnPoint.cpp"
 	"Entities/Gameplay/SpawnPoint.h"
+	"Entities/Gameplay/Lift.cpp"
+	"Entities/Gameplay/Lift.h"
 )
 source_group("Entities\\Gameplay" FILES ${SourceGroup_GameplayEntities})
 
