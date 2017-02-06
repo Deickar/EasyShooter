@@ -139,12 +139,12 @@ void CLiftEntity::ProcessEvent(SEntityEvent &event)
 	{
 	case ENTITY_EVENT_START_GAME:
 	{
-		StartLift();
+		//StartLift();
 		break;
 	}
 	case ENTITY_EVENT_RESET:
 	{
-		StopLift();
+		//StopLift();
 	}
 	default:
 		break;
