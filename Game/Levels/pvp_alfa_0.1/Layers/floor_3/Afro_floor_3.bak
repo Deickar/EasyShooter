@@ -1,3 +1,3 @@
 <ObjectLayer>
- <Layer Name="Afro_floor_3" FullName="Floor_3/Afro_floor_3" GUID="{36D28E43-BD6C-526A-C01C-437DF0DF888D}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{CBA93213-65D4-35AD-2E49-34ECB6B7C62F}"/>
+ <Layer Name="Afro_floor_3" FullName="Floor_3/Afro_floor_3" GUID="{36D28E43-BD6C-526A-C01C-437DF0DF888D}" Hidden="1" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{8FC980F6-BF2E-4386-4384-09D06171800C}"/>
 </ObjectLayer>
