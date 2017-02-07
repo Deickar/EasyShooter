@@ -149,16 +149,14 @@ bool CPlayerInput::OnActionJump(EntityId entityId, const ActionId & actionId, in
 
 		if (pPhysics && pEntity &&  pMovement->IsOnGround())
 		{
-			// This bad way! We need use animations for this action
+			// TODO : This bad way! We need use animations for this action
 			pe_action_impulse impulseAction;
-
-			//impulseAction.impulse = pEntity->GetWorldRotation().GetColumn2() * 500.f * m_pPlayer->GetCVars().m_jumpHeightMultiplier;
-
 			Vec3 impulsePos = pEntity->GetWorldPos();
 			impulsePos.x = 0;
 			impulsePos.y = 0;
+			impulsePos.z = impulsePos.z + 500 * m_pPlayer->GetCVars().m_jumpHeightMultiplier;
+			impulseAction.impulse = impulsePos;
 
-			impulseAction.impulse = impulsePos * 15.f * m_pPlayer->GetCVars().m_jumpHeightMultiplier;
 			pPhysics->Action(&impulseAction);
 		}
 	}
