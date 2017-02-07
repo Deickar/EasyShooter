@@ -6,21 +6,13 @@
 #include "IFireNetBase.h"
 #include "IFireNetListener.h"
 
-class CTcpPacket;
-class CUdpPacket;
+class NetPacket;
 
 // Base interface for using in game plugin
 struct IFireNetCore
 {
 	// Register FireNet listener for work with UI or somethings else
 	virtual void RegisterFireNetListener(IFireNetListener *listener) = 0;
-
-	// Register entity in FireNet system for synchronization entity state in game world
-	virtual void RegisterFireNetEntity(IFireNetEntity *entity) = 0;
-
-	/**************************************************************************************/
-	/*************************** Master server functionality ******************************/
-	/**************************************************************************************/
 
 	// Connect to master server
 	virtual void ConnectToMasterServer() = 0;
@@ -66,17 +58,5 @@ struct IFireNetCore
 
 	// Send some raw request to master server. For e.g. this may be login or register request
 	// You need add to you project TcpPacket.h for using this function
-	virtual void SendRawRequestToMasterServer(CTcpPacket &packet) = 0;
-
-
-	/**************************************************************************************/
-	/************************* Dedicated server functionality *****************************/
-	/**************************************************************************************/
-
-	// Connect to dedicated game server
-	virtual void ConnectToGameServer() = 0;
-
-	// Send raw request to dedicated server (Move, action, script, etc...)
-	// You need add to you project UdpPacket.h for using this function
-	virtual void SendRawRequestToGameServer(CUdpPacket &packet) = 0;
+	virtual void SendRawRequestToMasterServer(NetPacket &packet) = 0;
 };

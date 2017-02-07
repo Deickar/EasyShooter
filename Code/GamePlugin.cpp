@@ -53,7 +53,7 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 		}
 
 		// Start connect to FireNet
-		if (gEnv->pFireNet)
+		if (gEnv->pFireNet && !gEnv->IsEditing())
 		{
 			gEnv->pFireNet->RegisterFireNetListener(this);
 			gEnv->pFireNet->ConnectToMasterServer();

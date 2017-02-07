@@ -88,12 +88,3 @@ struct SFireNetGameServer
 	int online;
 	int maxPlayers;
 };
-
-// FireNet entity base class
-class IFireNetEntity
-{
-public:
-	IFireNetEntity() {}
-	~IFireNetEntity() {}
-private:
-};
