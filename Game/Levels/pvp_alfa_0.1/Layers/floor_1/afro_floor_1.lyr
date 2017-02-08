@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="Afro_floor_1" FullName="Floor_1/Afro_floor_1" GUID="{04F3EC10-A2BF-2C7D-C471-199C4B08E42E}" Hidden="0" Frozen="0" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{CAF8146B-2692-C2D1-1B4A-6EE7B127359F}">
+ <Layer Name="Afro_floor_1" FullName="Floor_1/Afro_floor_1" GUID="{04F3EC10-A2BF-2C7D-C471-199C4B08E42E}" Hidden="0" Frozen="0" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{744AB6A2-2D56-2821-63C6-2B3C89913A3C}">
   <LayerObjects>
    <Object Type="Entity" Layer="Afro_floor_1" LayerGUID="{04F3EC10-A2BF-2C7D-C471-199C4B08E42E}" Id="{14C37254-18B6-AF1C-1EE1-79EE63DC49C7}" Name="Lift1" Pos="62.295769,67.54528,32.075863" FloorNumber="-1" Rotate="1,0,0,0" Scale="4.6794739,4.6979766,1" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Lift" HasEntity="1">
     <Properties />
