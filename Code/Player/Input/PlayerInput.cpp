@@ -154,7 +154,7 @@ bool CPlayerInput::OnActionJump(EntityId entityId, const ActionId & actionId, in
 			Vec3 impulsePos = pEntity->GetWorldPos();
 			impulsePos.x = 0;
 			impulsePos.y = 0;
-			impulsePos.z = impulsePos.z + 500 * m_pPlayer->GetCVars().m_jumpHeightMultiplier;
+			impulsePos.z = impulsePos.z + 400 * m_pPlayer->GetCVars().m_jumpHeightMultiplier;
 			impulseAction.impulse = impulsePos;
 
 			pPhysics->Action(&impulseAction);
