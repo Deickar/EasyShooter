@@ -1,3 +1,6 @@
+// Copyright (C) 2016-2017 Ilya Chernetsov. All rights reserved. Contacts: <chernecoff@gmail.com>
+// License: https://github.com/afrostalin/EasyShooter/blob/master/LICENCE.md
+
 #include "StdAfx.h"
 #include "PlayerInput.h"
 #include "Player/Player.h"
@@ -6,6 +9,8 @@
 #include "UI/UIManager.h"
 
 #include <CryAnimation/ICryAnimation.h>
+
+#include "FireNet/IFireNetClientActions.h"
 
 void CPlayerInput::PostInit(IGameObject *pGameObject)
 {
@@ -141,6 +146,8 @@ bool CPlayerInput::OnActionMoveBack(EntityId entityId, const ActionId& actionId,
 
 bool CPlayerInput::OnActionJump(EntityId entityId, const ActionId & actionId, int activationMode, float value)
 {
+	HandleInputFlagChange(eInputFlag_Jump, activationMode);
+
 	if (activationMode == eIS_Pressed)
 	{
 		auto *pMovement = m_pPlayer->GetMovement();
@@ -165,18 +172,14 @@ bool CPlayerInput::OnActionJump(EntityId entityId, const ActionId & actionId, in
 
 bool CPlayerInput::OnActionSprint(EntityId entityId, const ActionId & actionId, int activationMode, float value)
 {	
+	HandleInputFlagChange(eInputFlag_Sprint, activationMode);
+
 	ICVar* speed = gEnv->pConsole->GetCVar("pl_moveSpeed");
 
-	if (activationMode == eIS_Down)
-	{
-		if (speed)
-			speed->Set(m_moveSpeed + 30.0f);
-	}
-	else if (activationMode == eIS_Released)
-	{
-		if (speed)
-			speed->Set(m_moveSpeed);
-	}
+	if (activationMode == eIS_Down && speed)
+		speed->Set(m_moveSpeed + 30.0f);
+	else if (activationMode == eIS_Released && speed)
+		speed->Set(m_moveSpeed);
 
 	return true;
 }
@@ -254,19 +257,24 @@ bool CPlayerInput::OnPhysicDebug(EntityId entityId, const ActionId & actionId, i
 bool CPlayerInput::OnActionMouseRotateYaw(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
 	m_mouseDeltaRotation.x -= value;
+	m_inputValues = value;
+	HandleInputFlagChange(eInputFlag_MouseRotateYaw, activationMode);
 	return true;
 }
 
 bool CPlayerInput::OnActionMouseRotatePitch(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
 	m_mouseDeltaRotation.y -= value;
+	m_inputValues = value;
+	HandleInputFlagChange(eInputFlag_MouseRotatePitch, activationMode);
 	return true;
 }
 
 bool CPlayerInput::OnActionShoot(EntityId entityId, const ActionId& actionId, int activationMode, float value)
 {
-	// Only fire on press, not release
-	if (activationMode == /*eIS_Pressed*/ eIS_Down)
+	HandleInputFlagChange(eInputFlag_Shoot, activationMode);
+
+	if (activationMode == eIS_Down)
 	{
 		auto *pWeapon = m_pPlayer->GetCurrentWeapon();
 		auto *pCharacter = GetEntity()->GetCharacter(CPlayer::eGeometry_FirstPerson);

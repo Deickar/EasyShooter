@@ -142,6 +142,7 @@ set (SourceGroup_FireNet
 	"FireNet/IFireNetBase.h"
 	"FireNet/IFireNetCore.h"
 	"FireNet/IFireNetListener.h"
+	"FireNet/IFireNetClientActions.h"
 )
 source_group("FireNet" FILES ${SourceGroup_FireNet})
 

@@ -1,3 +1,6 @@
+// Copyright (C) 2016-2017 Ilya Chernetsov. All rights reserved. Contacts: <chernecoff@gmail.com>
+// License: https://github.com/afrostalin/EasyShooter/blob/master/LICENCE.md
+
 #include "StdAfx.h"
 #include "Player.h"
 
@@ -10,7 +13,6 @@
 #include "Game/GameRules.h"
 
 #include "Entities/Gameplay/SpawnPoint.h"
-
 #include "Entities/Gameplay/Weapons/ISimpleWeapon.h"
 
 #include <CryRenderer/IRenderAuxGeom.h>
@@ -142,14 +144,18 @@ void CPlayer::ProcessEvent(SEntityEvent& event)
 			switch (event.nParam[0])
 			{
 			case 0: // Game ends
+			{
 				m_pCurrentWeapon = nullptr;
 				break;
+			}
 			case 1: // Game starts
-				// Make sure to revive player when respawning in Editor
+			{
 				SetHealth(GetMaxHealth());
-				// Create rifle
-				if (!m_pCurrentWeapon) CreateWeapon("Rifle");
+				if (!m_pCurrentWeapon) 
+					CreateWeapon("Rifle");
+
 				break;
+			}
 			default:
 				break;
 			}

@@ -1,3 +1,6 @@
+// Copyright (C) 2016-2017 Ilya Chernetsov. All rights reserved. Contacts: <chernecoff@gmail.com>
+// License: https://github.com/afrostalin/EasyShooter/blob/master/LICENCE.md
+
 #pragma once
 
 #include "Player/ISimpleActor.h"
@@ -61,39 +64,33 @@ public:
 	virtual ~CPlayer();
 
 	// ISimpleActor
-	virtual bool Init(IGameObject* pGameObject) override;
-	virtual void PostInit(IGameObject* pGameObject) override;
-	virtual void ProcessEvent(SEntityEvent& event) override;
-
-	virtual void SetHealth(float health) override;
-	virtual float GetHealth() const override { return m_bAlive ? GetMaxHealth() : 0.f; }
+	virtual bool           Init(IGameObject* pGameObject) override;
+	virtual void           PostInit(IGameObject* pGameObject) override;
+	virtual void           ProcessEvent(SEntityEvent& event) override;
+	 
+	virtual void           SetHealth(float health) override;
+	virtual float          GetHealth() const override { return m_bAlive ? GetMaxHealth() : 0.f; }
 	// ~ISimpleActor
 
-	CPlayerInput *GetInput() const { return m_pInput; }
-	CPlayerMovement *GetMovement() const { return m_pMovement; }
+	CPlayerInput*          GetInput() const { return m_pInput; }
+	CPlayerMovement*       GetMovement() const { return m_pMovement; }
+	ISimpleWeapon*         GetCurrentWeapon() const { return m_pCurrentWeapon; }
 
-	ISimpleWeapon *GetCurrentWeapon() const { return m_pCurrentWeapon; }
+	bool                   IsThirdPerson() const { return m_bThirdPerson; }
+	void                   SetThirdPerson(bool mode) { m_bThirdPerson = mode; }
 
-	virtual bool IsThirdPerson() const { return m_bThirdPerson; }
-	void SetThirdPerson(bool mode) { m_bThirdPerson = mode; }
-
-	const SExternalCVars &GetCVars() const;
-
+	const SExternalCVars&  GetCVars() const;
 protected:
-	void SelectSpawnPoint();
-	void SetPlayerModel();
-
-	void CreateWeapon(const char *name);
-
+	void                   SelectSpawnPoint();
+	void                   SetPlayerModel();
+	void                   CreateWeapon(const char *name);
 protected:
-	CPlayerInput *m_pInput;
-	CPlayerMovement *m_pMovement;
-	CPlayerView *m_pView;
-	CPlayerAnimations *m_pAnimations;
+	CPlayerInput*          m_pInput;
+	CPlayerMovement*       m_pMovement;
+	CPlayerView*           m_pView;
+	CPlayerAnimations*     m_pAnimations;
+	ISimpleWeapon*         m_pCurrentWeapon;
 
-	bool m_bAlive;
-	bool m_bThirdPerson;
-
-	// Pointer to the weapon the player is currently using
-	ISimpleWeapon *m_pCurrentWeapon;
+	bool                   m_bAlive;
+	bool                   m_bThirdPerson;
 };

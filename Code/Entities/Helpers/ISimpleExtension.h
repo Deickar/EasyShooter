@@ -1,8 +1,10 @@
+// Copyright (C) 2016-2017 Ilya Chernetsov. All rights reserved. Contacts: <chernecoff@gmail.com>
+// License: https://github.com/afrostalin/EasyShooter/blob/master/LICENCE.md
+
 #pragma once
 
 #include <IGameObject.h>
 
-// Helper struct to avoid having to implement all IGameObjectExtension functions every time
 struct ISimpleExtension : public IGameObjectExtension
 {
 	//IGameObjectExtension
