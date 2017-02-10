@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="props" FullName="Environment/props" GUID="{465E93B8-FD70-CA72-33E4-38EDBEBCD802}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{231AB291-04DF-090F-6EF2-72BA47947724}">
+ <Layer Name="props" FullName="Environment/props" GUID="{465E93B8-FD70-CA72-33E4-38EDBEBCD802}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{0F537EEE-4397-9EE7-E486-01F73438CFF1}">
   <LayerObjects>
    <Object Type="Group" Layer="props" LayerGUID="{465E93B8-FD70-CA72-33E4-38EDBEBCD802}" Id="{94C84C41-8652-3087-A933-3E478F4C9E2F}" Name="Crane" Pos="150.97476,110.35191,68.049622" FloorNumber="-1" Rotate="1,0,0,0" ColorRGB="65280" Flags="4" Opened="0">
     <Objects>
