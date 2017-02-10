@@ -136,16 +136,6 @@ set (SourceGroup_UI_HUD
 )
 source_group("UI\\HUD" FILES ${SourceGroup_UI_HUD})
 
-# FireNet 
-
-set (SourceGroup_FireNet
-	"FireNet/IFireNetBase.h"
-	"FireNet/IFireNetCore.h"
-	"FireNet/IFireNetListener.h"
-	"FireNet/IFireNetClientActions.h"
-)
-source_group("FireNet" FILES ${SourceGroup_FireNet})
-
 set (SOURCE
 	${SourceGroup_PluginMain}
 	${SourceGroup_Game}
@@ -161,7 +151,6 @@ set (SOURCE
 	${SourceGroup_UI}
 	${SourceGroup_UI_Menu}
 	${SourceGroup_UI_HUD}
-	${SourceGroup_FireNet}
 )
 
 if(OPTION_PCH AND MSVC)	
@@ -174,6 +163,7 @@ endif (OPTION_PCH AND MSVC)
 
 add_library(${PROJECT_NAME} MODULE ${SOURCE})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/FireNet)
 target_link_libraries(${PROJECT_NAME} PRIVATE CryCommon CryAction)
 
 if (WIN32)

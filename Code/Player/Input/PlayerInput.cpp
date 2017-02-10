@@ -10,8 +10,6 @@
 
 #include <CryAnimation/ICryAnimation.h>
 
-#include "FireNet/IFireNetClientActions.h"
-
 void CPlayerInput::PostInit(IGameObject *pGameObject)
 {
 	m_pPlayer = static_cast<CPlayer *>(pGameObject->QueryExtension("Player"));

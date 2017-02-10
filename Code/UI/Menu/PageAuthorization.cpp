@@ -3,7 +3,8 @@
 
 #include "StdAfx.h"
 #include "PageAuthorization.h"
-#include "FireNet/IFireNetCore.h"
+
+#include <FireNet>
 
 CPageAuthorization::~CPageAuthorization()
 {
@@ -128,7 +129,7 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			gEnv->pFireNet->Authorization(login, password);
+			gEnv->pFireNet->pFireNetCore->Authorization(login, password);
 		}
 	}
 	else if (strcmp(event.sDisplayName, "OnRegister") == 0)
@@ -138,7 +139,7 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			gEnv->pFireNet->Registration(login, password);
+			gEnv->pFireNet->pFireNetCore->Registration(login, password);
 		}
 	}
 	else if (strcmp(event.sDisplayName, "OnExit") == 0)

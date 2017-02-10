@@ -67,6 +67,7 @@ public:
 	virtual bool           Init(IGameObject* pGameObject) override;
 	virtual void           PostInit(IGameObject* pGameObject) override;
 	virtual void           ProcessEvent(SEntityEvent& event) override;
+	virtual void           Update(SEntityUpdateContext& ctx, int updateSlot) override;
 	 
 	virtual void           SetHealth(float health) override;
 	virtual float          GetHealth() const override { return m_bAlive ? GetMaxHealth() : 0.f; }

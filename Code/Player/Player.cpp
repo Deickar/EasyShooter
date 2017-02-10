@@ -17,6 +17,8 @@
 
 #include <CryRenderer/IRenderAuxGeom.h>
 
+#include <FireNet>
+
 class CPlayerRegistrator
 	: public IEntityRegistrator
 	, public CPlayer::SExternalCVars
@@ -120,6 +122,8 @@ bool CPlayer::Init(IGameObject *pGameObject)
 {
 	SetGameObject(pGameObject);
 
+	pGameObject->EnableUpdateSlot(this, 0);
+
 	return pGameObject->BindToNetwork();
 }
 
@@ -179,6 +183,14 @@ void CPlayer::ProcessEvent(SEntityEvent& event)
 			}
 		}
 		break;
+	}
+}
+
+void CPlayer::Update(SEntityUpdateContext & ctx, int updateSlot)
+{
+	if (gEnv->pFireNet && gEnv->pFireNet->pFireNetClient)
+	{
+		gEnv->pFireNet->pFireNetClient->SendMovementRequest((EFireNetClientActions) m_pInput->GetInputFlags(), m_pInput->GetInputValues());
 	}
 }
 

@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "FireNet/IFireNetCore.h"
+#include <FireNet>
 
 #include <CrySystem/ICryPlugin.h>
 #include <CryGame/IGameFramework.h>
