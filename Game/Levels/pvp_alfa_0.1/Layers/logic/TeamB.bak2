@@ -1,0 +1,78 @@
+<ObjectLayer>
+ <Layer Name="TeamB" FullName="Logic/TeamB" GUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{4EA81485-25F4-DC76-B4DC-A8486C9DF1CF}">
+  <LayerObjects>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{354CBECB-45AD-CC6C-24F8-172AC5F46407}" Name="SpawnPoint8" Pos="109.05654,151.50285,41.266979" FloorNumber="-1" Rotate="0.7302652,0,0,-0.68316376" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{4BD76ADF-C538-FC72-4A2D-758ECBCACEEE}" Name="SpawnPoint3" Pos="137.89906,113.58961,41.266983" FloorNumber="-1" Rotate="0.99087662,0,0,-0.13477226" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{58B68130-8163-D2C9-5EB1-E0AB34D7F5A7}" Name="SpawnPoint5" Pos="109.29493,132.57486,41.266979" FloorNumber="-1" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{89A50CAB-B659-6279-13CC-358A84D86E98}" Name="SpawnPoint7" Pos="122.81666,116.19546,41.25185" FloorNumber="-1" Rotate="-0.14957322,-0.00021374502,-0.0046086209,0.98873991" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{C9A28B5E-F7B1-705A-E177-54DDFD498112}" Name="SpawnPoint2" Pos="150.30209,120.80544,41.266979" FloorNumber="-1" Rotate="0.92667633,0,0,0.37586033" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{D4407232-B865-C3C8-1094-A42428ACA99A}" Name="SpawnPoint1" Pos="143.36839,144.50496,41.266979" FloorNumber="-1" Rotate="0.94343024,0,0,0.33157107" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{D91871ED-DEBD-22A9-A611-63B7C10B0BAF}" Name="SpawnPoint4" Pos="108.54161,130.13107,41.266979" FloorNumber="-1" Rotate="0.0063690268,0,0,0.99997973" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="Entity" Layer="TeamB" LayerGUID="{9CA0E546-1DCF-12BC-E11F-82826788F1C3}" Id="{F7637A15-DDC3-9743-579D-044516535A44}" Name="SpawnPoint6" Pos="123.25375,142.79236,41.25185" FloorNumber="-1" Rotate="0.39320883,0,0,0.91944921" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+  </LayerObjects>
+ </Layer>
+</ObjectLayer>

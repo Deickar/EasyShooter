@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="fence" FullName="Environment/fence" GUID="{FBDC8E5D-7C5B-194B-D472-16219B85A3C1}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{42C6AE08-3BCD-B0E4-D080-8B513E9352FD}">
+ <Layer Name="fence" FullName="Environment/fence" GUID="{FBDC8E5D-7C5B-194B-D472-16219B85A3C1}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{AABE24FD-8B74-F33D-65F9-68A492CFC4C0}">
   <LayerObjects>
    <Object Type="Designer" Layer="fence" LayerGUID="{FBDC8E5D-7C5B-194B-D472-16219B85A3C1}" Id="{03DCEC6B-9202-048B-B736-E6359AD09000}" Name="Designer328" Pos="84.868729,148.11192,30.077797" FloorNumber="-1" Rotate="0.70710677,0,0,0.70710677" ColorRGB="16777215" Material="EngineAssets/TextureMsg/DefaultSolids" RndFlags="1073741832" StaticObjFlags="0" ViewDistRatio="100">
     <Brush DesignerModeFlags="0" SubdivisionLevel="0" SubdivisionSmoothingGroup="0" MirrorPlaneNormal="0,0,0" MirrorPlaneDistance="0">
@@ -940,7 +940,7 @@
      <SemiSharpCrease />
      <UVIslands />
     </Brush>
-    <Mesh Version="2" BinaryData="AAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAQAAAOIYu72nFpU/UrCOP07DkL/9QrK9NwGKP62EgT2AxFK8BguDvfNFGz8PcgW/4q4ZP/NFGz8PcgW/4q4ZP/NFGz8PcgW/4q4ZP6cWlT9SsI6/AEOyvTcBir+AxFK8CAuDPQAAAQACAG1TEmEAAAGACloAAAilAYBtUxJhAAABgApaAAAIpQGAbVMSYQAAAYAKWgAACKUBgAOrCL938gk/on8GPx/7hT8AAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAAAAAAAABAAAA=="/>
+    <Mesh Version="2" BinaryData="AAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAQAAAK2EgT2AxFK8BguDveIYu72nFpU/UrCOP07DkL/9QrK9NwGKP/NFGz8PcgW/4q4ZP/NFGz8PcgW/4q4ZP/NFGz8PcgW/4q4ZP4DEUrwIC4M9pxaVP1Kwjr8AQ7K9NwGKvwAAAQACAG1TEmEAAAGACloAAAilAYBtUxJhAAABgApaAAAIpQGAbVMSYQAAAYAKWgAACKUBgAOrCL938gk/on8GPx/7hT8AAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAAAAAAAABAAAA=="/>
    </Object>
    <Object Type="Designer" Layer="fence" LayerGUID="{FBDC8E5D-7C5B-194B-D472-16219B85A3C1}" Id="{25EE5AD6-F63E-9BE9-4FC6-966A34CFDD76}" Name="Designer332" Pos="90.541061,85.176483,34.96262" FloorNumber="-1" Rotate="1,0,0,0" ColorRGB="16777215" Material="EngineAssets/TextureMsg/DefaultSolids" RndFlags="1073741832" StaticObjFlags="0" ViewDistRatio="100">
     <Brush DesignerModeFlags="0" SubdivisionLevel="0" SubdivisionSmoothingGroup="0" MirrorPlaneNormal="0,0,0" MirrorPlaneDistance="0">
