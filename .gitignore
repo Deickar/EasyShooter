@@ -6,6 +6,7 @@
 /user/*
 /user(1)/*
 /Game/engineassets/*
+/Game/_tmp/*
 
 # Log files
 *.log
@@ -15,3 +16,5 @@
 *.ilk
 *.pdb
 *.zip
+
+last_fbx_scene.txt

@@ -25,7 +25,7 @@ class CPlayerRegistrator
 {
 	virtual void Register() override
 	{
-		CGamePlugin::RegisterEntityWithDefaultComponent<CPlayer>("Player");
+		CGamePlugin::RegisterEntityWithDefaultComponent<CPlayer>("Player", "Characters", "character.bmp", true);
 
 		CGamePlugin::RegisterEntityComponent<CPlayerMovement>("PlayerMovement");
 		CGamePlugin::RegisterEntityComponent<CPlayerInput>("PlayerInput");
@@ -43,6 +43,7 @@ class CPlayerRegistrator
 	void RegisterCVars()
 	{
 		REGISTER_CVAR2("pl_mass", &m_mass, 90.f, VF_CHEAT, "Mass of the player entity in kg");
+
 		REGISTER_CVAR2("pl_moveSpeed", &m_moveSpeed, 20.5f, VF_CHEAT, "Speed at which the player moves");
 
 		REGISTER_CVAR2("pl_jumpHeightMultiplayer", &m_jumpHeightMultiplier, 1.3f, VF_CHEAT, "Player jump height multiplier");
@@ -121,9 +122,6 @@ const CPlayer::SExternalCVars &CPlayer::GetCVars() const
 bool CPlayer::Init(IGameObject *pGameObject)
 {
 	SetGameObject(pGameObject);
-
-	pGameObject->EnableUpdateSlot(this, 0);
-
 	return pGameObject->BindToNetwork();
 }
 
@@ -137,6 +135,10 @@ void CPlayer::PostInit(IGameObject *pGameObject)
 
 	// Register with the actor system
 	gEnv->pGameFramework->GetIActorSystem()->AddActor(GetEntityId(), this);
+
+	pGameObject->EnableUpdateSlot(this, 0);
+
+	SetHealth(GetMaxHealth());
 }
 
 void CPlayer::ProcessEvent(SEntityEvent& event)
@@ -188,9 +190,10 @@ void CPlayer::ProcessEvent(SEntityEvent& event)
 
 void CPlayer::Update(SEntityUpdateContext & ctx, int updateSlot)
 {
+	// Send moveming request every frame
 	if (gEnv->pFireNet && gEnv->pFireNet->pFireNetClient)
 	{
-		gEnv->pFireNet->pFireNetClient->SendMovementRequest((EFireNetClientActions) m_pInput->GetInputFlags(), m_pInput->GetInputValues());
+		gEnv->pFireNet->pFireNetClient->SendMovementRequest((EFireNetClientActions)m_pInput->GetInputFlags(), m_pInput->GetInputValues());
 	}
 }
 

@@ -18,11 +18,7 @@ class CSpawnPoint;
 
 struct ISimpleWeapon;
 
-////////////////////////////////////////////////////////
-// Represents a player participating in gameplay
-////////////////////////////////////////////////////////
-class CPlayer 
-	: public CGameObjectExtensionHelper<CPlayer, ISimpleActor>
+class CPlayer : public CGameObjectExtensionHelper<CPlayer, ISimpleActor>
 {
 public:
 	enum EGeometrySlots
@@ -36,7 +32,7 @@ public:
 		float m_moveSpeed;
 
 		float m_jumpHeightMultiplier;
-		float m_sprintMultiplier;
+
 		float m_viewOffsetY;
 		float m_viewOffsetZ;
 

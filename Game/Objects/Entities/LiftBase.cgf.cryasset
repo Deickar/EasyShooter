@@ -1,0 +1,12 @@
+<cryasset>
+ <AssetMetadata version="0" type="Mesh" guid="{2FDC5A4F-5058-7800-44C0-7FE4955733DC}" source="LiftBase.fbx">
+  <Files>
+   <File path="LiftBase.cgf"/>
+  </Files>
+  <Details>
+   <Detail name="materialCount">2</Detail>
+   <Detail name="triangleCount">4284</Detail>
+   <Detail name="vertexCount">8360</Detail>
+  </Details>
+ </AssetMetadata>
+</cryasset>

@@ -29,6 +29,7 @@ public:
 	bool IsOnGround() const { return m_bOnGround; }
 	Vec3 GetGroundNormal() const { return m_groundNormal; }
 
+	void SetSprint(float value) { m_SprintValue = value; }
 protected:
 	// Get the stats from latest physics thread update
 	void GetLatestPhysicsStats(IPhysicalEntity &physicalEntity);
@@ -39,4 +40,6 @@ protected:
 
 	bool m_bOnGround;
 	Vec3 m_groundNormal;
+
+	float m_SprintValue = 0.f;
 };

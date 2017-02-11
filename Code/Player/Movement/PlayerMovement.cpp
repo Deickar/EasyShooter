@@ -90,7 +90,7 @@ void CPlayerMovement::UpdateMovementRequest(float frameTime, IPhysicalEntity &ph
 		moveAction.iJump = 2;
 
 		const float moveSpeed = m_pPlayer->GetCVars().m_moveSpeed;
-		moveAction.dir = m_pPlayer->GetInput()->GetLookOrientation() * GetLocalMoveDirection() * moveSpeed * frameTime;
+		moveAction.dir = m_pPlayer->GetInput()->GetLookOrientation() * GetLocalMoveDirection() *  (moveSpeed + m_SprintValue) * frameTime;
 
 		// Dispatch the movement request
 		physicalEntity.Action(&moveAction);

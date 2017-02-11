@@ -51,6 +51,11 @@ void CPlayerInput::Update(SEntityUpdateContext &ctx, int updateSlot)
 
 	// Reset every frame
 	m_mouseDeltaRotation = ZERO;
+
+	if (auto* pMovement = m_pPlayer->GetMovement())
+	{
+		pMovement->SetSprint(0.f);
+	}
 }
 
 void CPlayerInput::OnPlayerRespawn()
@@ -172,12 +177,10 @@ bool CPlayerInput::OnActionSprint(EntityId entityId, const ActionId & actionId, 
 {	
 	HandleInputFlagChange(eInputFlag_Sprint, activationMode);
 
-	ICVar* speed = gEnv->pConsole->GetCVar("pl_moveSpeed");
-
-	if (activationMode == eIS_Down && speed)
-		speed->Set(m_moveSpeed + 30.0f);
-	else if (activationMode == eIS_Released && speed)
-		speed->Set(m_moveSpeed);
+	if (auto* pMovement = m_pPlayer->GetMovement())
+	{
+		pMovement->SetSprint(30.f);
+	}
 
 	return true;
 }

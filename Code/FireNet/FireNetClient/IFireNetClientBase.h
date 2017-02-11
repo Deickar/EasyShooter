@@ -1,9 +1,11 @@
 // Copyright (C) 2014-2017 Ilya Chernetsov. All rights reserved. Contacts: <chernecoff@gmail.com>
 // License: https://github.com/afrostalin/FireNET/blob/master/LICENSE
 
-typedef unsigned int TInputFlags;
+typedef unsigned int uint;
 
-enum EFireNetClientActions : TInputFlags
+class CNetPlayer;
+
+enum EFireNetClientActions : uint
 {
 	E_ACTION_MOVE_LEFT = 1 << 0,
 	E_ACTION_MOVE_RIGHT = 1 << 1,
@@ -14,4 +16,25 @@ enum EFireNetClientActions : TInputFlags
 	E_ACTION_SHOOT = 1 << 6,
 	E_ACTION_MOUSE_ROTATE_YAW = 1 << 7,
 	E_ACTION_MOUSE_ROTATE_PITCH = 1 << 8,
+};
+
+struct SNetPlayer
+{
+	uint        m_PlayerUID;
+	uint        m_EntityId;
+	uint        m_ChanelId;
+
+	Vec3        m_PlayerSpawnPos;
+	Quat        m_PlayerSpawnRot;
+
+	string      m_PlayerModel;
+	string      m_PlayerNickname;
+
+	CNetPlayer* pPlayer;
+};
+
+struct SNetPlayerAction
+{
+	EFireNetClientActions m_action;
+	float                 m_value;
 };
