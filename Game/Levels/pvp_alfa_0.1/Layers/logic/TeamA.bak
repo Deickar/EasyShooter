@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="TeamA" FullName="Logic/TeamA" GUID="{CAA01771-2D24-5AF8-8D32-A685E913D7F4}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{29419DFE-36D5-FB28-14FD-E3893A4E857A}">
+ <Layer Name="TeamA" FullName="Logic/TeamA" GUID="{CAA01771-2D24-5AF8-8D32-A685E913D7F4}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{E5D924F0-57CE-B1D0-CA5F-CFF1E8A33050}">
   <LayerObjects>
    <Object Type="Entity" Layer="TeamA" LayerGUID="{CAA01771-2D24-5AF8-8D32-A685E913D7F4}" Id="{3016B76D-6E2B-ED01-5556-2AEFCE147108}" Name="SpawnPoint14" Pos="130.56294,143.50827,32.171688" FloorNumber="-1" Rotate="0.11335334,0,0,0.99355471" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
     <Properties />

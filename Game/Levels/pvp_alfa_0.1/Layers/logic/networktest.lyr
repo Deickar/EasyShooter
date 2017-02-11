@@ -1,0 +1,15 @@
+<ObjectLayer>
+ <Layer Name="NetworkTest" FullName="Logic/NetworkTest" GUID="{02479032-2D97-B1A8-9E3D-3A0CE85D78BF}" Hidden="0" Frozen="0" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{21E7501D-41E7-7275-C4A7-F82934D13393}">
+  <LayerObjects>
+   <Object Type="Entity" Layer="NetworkTest" LayerGUID="{02479032-2D97-B1A8-9E3D-3A0CE85D78BF}" Id="{CC34EFA3-000E-7143-2F6D-37799142F3E6}" Name="SpawnPoint17" Pos="167.57188,125.56084,32.171688" FloorNumber="-1" Rotate="1,0,0,0" ColorRGB="65535" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="SpawnPoint" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component typeId="{EC4E2FDC-DCFF-4AB3-A691-B9CC4ECE5788}"/>
+     <Component typeId="{10000000-1000-1000-1000-100000000000}">
+      <Enabled value="false"/>
+     </Component>
+    </Components>
+   </Object>
+  </LayerObjects>
+ </Layer>
+</ObjectLayer>

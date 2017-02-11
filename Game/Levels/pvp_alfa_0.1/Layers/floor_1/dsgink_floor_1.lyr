@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="DSGink_floor_1" FullName="Floor_1/DSGink_floor_1" GUID="{6FB08FED-7AC1-3FB6-AABF-68D6CABB72A2}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{80F3828F-0860-D5C8-077E-0BE7BCBDC995}">
+ <Layer Name="DSGink_floor_1" FullName="Floor_1/DSGink_floor_1" GUID="{6FB08FED-7AC1-3FB6-AABF-68D6CABB72A2}" Hidden="0" Frozen="1" Expanded="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" ParentGUID="{F47A2FFB-840A-8AD4-6D83-AB4E88431409}">
   <LayerObjects>
    <Object Type="Designer" Layer="DSGink_floor_1" LayerGUID="{6FB08FED-7AC1-3FB6-AABF-68D6CABB72A2}" Id="{0107C62A-7557-4350-B8AA-0ABB394EEC8B}" Name="Designer78" Pos="113.01836,152.5229,32" FloorNumber="-1" Rotate="1.0000001,0,0,0" ColorRGB="16777215" Material="EngineAssets/TextureMsg/DefaultSolids" RndFlags="1073741832" StaticObjFlags="0" ViewDistRatio="100">
     <Brush DesignerModeFlags="0" SubdivisionLevel="0" SubdivisionSmoothingGroup="0" MirrorPlaneNormal="0,0,0" MirrorPlaneDistance="0">
