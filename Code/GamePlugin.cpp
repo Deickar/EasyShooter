@@ -35,6 +35,11 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 {
 	switch (event)
 	{
+	case ESYSTEM_EVENT_EDITOR_ON_INIT:
+	{
+		gEnv->SetIsEditor(true);
+		break;
+	}
 	case ESYSTEM_EVENT_GAME_POST_INIT:
 	{
 		// Register entities
@@ -44,7 +49,6 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 			pTemp->Register();
 			pTemp = pTemp->m_pNext;
 		}
-
 		break;
 	}
 	case ESYSTEM_EVENT_GAME_FRAMEWORK_INIT_DONE:
@@ -56,11 +60,11 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 		}
 
 		// Start connect to FireNet
-		if (gEnv->pFireNet && gEnv->IsClient())
+/*		if (gEnv->pFireNetCore && !gEnv->IsEditor())
 		{
-			gEnv->pFireNet->pFireNetCore->RegisterFireNetListener(this);
-			gEnv->pFireNet->pFireNetCore->ConnectToMasterServer();
-		}
+			gEnv->pFireNetCore->RegisterFireNetListener(this);
+			gEnv->pFireNetCore->ConnectToMasterServer();
+		}*/
 
 		break;
 	}
@@ -132,6 +136,7 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 			// Unhide HUD page
 			pEnv->pUIManager->ShowPage("HUDPage");
 		}
+
 		break;
 	}
 

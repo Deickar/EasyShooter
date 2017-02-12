@@ -191,9 +191,9 @@ void CPlayer::ProcessEvent(SEntityEvent& event)
 void CPlayer::Update(SEntityUpdateContext & ctx, int updateSlot)
 {
 	// Send moveming request every frame
-	if (gEnv->pFireNet && gEnv->pFireNet->pFireNetClient)
+	if (gEnv->pFireNetClient)
 	{
-		gEnv->pFireNet->pFireNetClient->SendMovementRequest((EFireNetClientActions)m_pInput->GetInputFlags(), m_pInput->GetInputValues());
+		gEnv->pFireNetClient->SendMovementRequest((EFireNetClientActions)m_pInput->GetInputFlags(), m_pInput->GetInputValues());
 	}
 }
 

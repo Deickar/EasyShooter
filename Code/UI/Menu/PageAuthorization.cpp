@@ -129,7 +129,7 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			gEnv->pFireNet->pFireNetCore->Authorization(login, password);
+			gEnv->pFireNetCore->Authorization(login, password);
 		}
 	}
 	else if (strcmp(event.sDisplayName, "OnRegister") == 0)
@@ -139,7 +139,7 @@ void CPageAuthorizationEventListener::OnUIEvent(IUIElement * pSender, const SUIE
 
 		if (args.GetArg(0, login) && args.GetArg(1, password))
 		{
-			gEnv->pFireNet->pFireNetCore->Registration(login, password);
+			gEnv->pFireNetCore->Registration(login, password);
 		}
 	}
 	else if (strcmp(event.sDisplayName, "OnExit") == 0)
