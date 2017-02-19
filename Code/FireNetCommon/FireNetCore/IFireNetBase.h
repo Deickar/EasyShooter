@@ -41,7 +41,7 @@ enum EFireNetPlayerStatus
 // Item structure
 struct SFireNetItem
 {
-	string name;
+	std::string name;
 	EFireNetItemType type;
 	int cost;
 	int minLvlForBuy;
@@ -51,7 +51,7 @@ struct SFireNetItem
 struct SFireNetFriend
 {
 	int uid;
-	string name;
+	std::string name;
 	EFireNetPlayerStatus status;
 };
 
@@ -67,8 +67,8 @@ struct SFireNetStats
 struct SFireNetProfile
 {
 	int uid;
-	string nickname;
-	string fileModel;
+	std::string nickname;
+	std::string fileModel;
 	int lvl;
 	int xp;
 	int money;
@@ -80,11 +80,11 @@ struct SFireNetProfile
 // Game server structure
 struct SFireNetGameServer
 {
-	string name;
+	std::string name;
 	const char* ip;
 	int port;
-	string map;
-	string gamerules;
+	std::string map;
+	std::string gamerules;
 	int online;
 	int maxPlayers;
 };

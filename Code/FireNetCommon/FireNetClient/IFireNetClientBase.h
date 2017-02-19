@@ -21,7 +21,6 @@ enum EFireNetClientActions : uint
 struct SNetPlayer
 {
 	uint        m_PlayerUID;
-	uint        m_EntityId;
 	uint        m_ChanelId;
 
 	Vec3        m_PlayerSpawnPos;

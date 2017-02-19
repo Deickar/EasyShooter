@@ -163,7 +163,7 @@ endif (OPTION_PCH AND MSVC)
 
 add_library(${PROJECT_NAME} MODULE ${SOURCE})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/FireNet)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/FireNetCommon)
 target_link_libraries(${PROJECT_NAME} PRIVATE CryCommon CryAction)
 
 if (WIN32)

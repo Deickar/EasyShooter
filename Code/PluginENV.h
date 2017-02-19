@@ -19,4 +19,4 @@ struct SPluginEnv
 	bool bInGame;
 };
 
-extern SPluginEnv* pEnv;
+extern SPluginEnv* mEnv;

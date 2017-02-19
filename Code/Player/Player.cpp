@@ -17,7 +17,7 @@
 
 #include <CryRenderer/IRenderAuxGeom.h>
 
-#include <FireNet>
+#include <FireNet-Client>
 
 class CPlayerRegistrator
 	: public IEntityRegistrator
@@ -191,7 +191,7 @@ void CPlayer::ProcessEvent(SEntityEvent& event)
 void CPlayer::Update(SEntityUpdateContext & ctx, int updateSlot)
 {
 	// Send moveming request every frame
-	if (gEnv->pFireNetClient)
+	if (gEnv->pFireNetClient && !gEnv->IsDedicated() &&  !gEnv->IsEditor())
 	{
 		gEnv->pFireNetClient->SendMovementRequest((EFireNetClientActions)m_pInput->GetInputFlags(), m_pInput->GetInputValues());
 	}

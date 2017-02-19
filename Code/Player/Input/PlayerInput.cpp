@@ -201,7 +201,7 @@ bool CPlayerInput::OnToggleThirdPersonMode(EntityId entityId, const ActionId & a
 bool CPlayerInput::OnActionGamePaused(EntityId entityId, const ActionId & actionId, int activationMode, float value)
 {
 	// Load InGame page if game paused and unload it when game resumed
-	if (!gEnv->IsEditor() && pEnv->bInGame && activationMode == eIS_Released && !bGamePaused)
+	if (!gEnv->IsEditor() && mEnv->bInGame && activationMode == eIS_Released && !bGamePaused)
 	{
 		bGamePaused = true;
 
@@ -212,10 +212,10 @@ bool CPlayerInput::OnActionGamePaused(EntityId entityId, const ActionId & action
 			pAMM->EnableFilter("no_move", true);	
 		}
 
-		pEnv->pUIManager->LoadPage("InGamePage");
+		mEnv->pUIManager->LoadPage("InGamePage");
 		gEnv->pSystem->GetISystemEventDispatcher()->OnSystemEvent(ESYSTEM_EVENT_GAME_PAUSED, 0, 0);
 	}
-	else if (!gEnv->IsEditor() && pEnv->bInGame && activationMode == eIS_Released && bGamePaused)
+	else if (!gEnv->IsEditor() && mEnv->bInGame && activationMode == eIS_Released && bGamePaused)
 	{
 		bGamePaused = false;
 
@@ -226,7 +226,7 @@ bool CPlayerInput::OnActionGamePaused(EntityId entityId, const ActionId & action
 			pAMM->EnableFilter("no_move", false);
 		}
 
-		pEnv->pUIManager->UnloadPage("InGamePage");
+		mEnv->pUIManager->UnloadPage("InGamePage");
 		gEnv->pSystem->GetISystemEventDispatcher()->OnSystemEvent(ESYSTEM_EVENT_GAME_RESUMED, 0, 0);
 	}
 

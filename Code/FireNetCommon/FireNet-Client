@@ -3,7 +3,4 @@
 
 #pragma once
 
-#include <FireNetCore/IFireNetCore.h>
-#include <FireNetCore/IFireNetListener.h>
-
 #include <FireNetClient/IFireNetClientCore.h>
