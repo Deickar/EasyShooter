@@ -28,34 +28,34 @@ public:
 	CUIManager();
 	~CUIManager();
 private:
-	bool Init();
+	bool                  Init();
 public:
-	void LoadPage(const char* name);
-	void UnloadPage(const char* name);
-	void ShowPage(const char* name);
-	void HidePage(const char* name);
-	void ReloadPage(const char* name);
+	void                  LoadPage(const char* name);
+	void                  UnloadPage(const char* name);
+	void                  ShowPage(const char* name);
+	void                  HidePage(const char* name);
+	void                  ReloadPage(const char* name);
 
-	void HideAll();
-	void UnloadAll();
+	void                  HideAll();
+	void                  UnloadAll();
 
-	int GetPagesCount();
-	IUIPage* GetPage(const char* name);
-	IUIElement* GetUIElement(const char* name);
+	int                   GetPagesCount();
+	IUIPage*              GetPage(const char* name);
+	IUIElement*           GetUIElement(const char* name);
 public:
-	CPageAuthorization* pPageAuthorization;
-	CPageInGame* pPageInGame;
-	CPageLoading* pPageLoading;
-	CPageLoadout* pPageLoadout;
-	CPageMain* pPageMain;
-	CPageProfile* pPageProfile;
-	CPageServerSearch* pPageServerSearch;
-	CPageSettings* pPageSettings;
-	CPageShop* pPageShop;
-	CPageHUD* pPageHUD;
-	CPageError* pPageError;
+	CPageAuthorization*   pPageAuthorization;
+	CPageInGame*          pPageInGame;
+	CPageLoading*         pPageLoading;
+	CPageLoadout*         pPageLoadout;
+	CPageMain*            pPageMain;
+	CPageProfile*         pPageProfile;
+	CPageServerSearch*    pPageServerSearch;
+	CPageSettings*        pPageSettings;
+	CPageShop*            pPageShop;
+	CPageHUD*             pPageHUD;
+	CPageError*           pPageError;
 private:
 	std::vector<IUIPage*> m_Pages;
 
-	bool bIsInit;
+	bool                  bIsInit;
 };

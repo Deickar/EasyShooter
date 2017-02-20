@@ -14,15 +14,17 @@ IEntityRegistrator *IEntityRegistrator::g_pLast = nullptr;
 
 CGamePlugin::~CGamePlugin()
 {
-	if (gEnv->pSystem)
-		gEnv->pSystem->GetISystemEventDispatcher()->RemoveListener(this);
-
+	// Unload entities
 	IEntityRegistrator* pTemp = IEntityRegistrator::g_pFirst;
 	while (pTemp != nullptr)
 	{
 		pTemp->Unregister();
 		pTemp = pTemp->m_pNext;
 	}
+
+	// Unload listeners
+	if (gEnv && gEnv->pSystem)
+		gEnv->pSystem->GetISystemEventDispatcher()->RemoveListener(this);
 }
 
 bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams)
@@ -134,8 +136,8 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 
 		break;
 	}
-
-	break;
+	default:
+		break;
 	}
 }
 
@@ -178,7 +180,7 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 				if (reason == 0)
 					errorString.AddArgument("@ui_connection_timeout");
 				else if (reason == 1)
-					errorString.AddArgument("@ui_cant_spawn_network_thread");
+					errorString.AddArgument("@ui_connection_error");
 
 
 				pElement->CallFunction("SetErrorText", errorString);
