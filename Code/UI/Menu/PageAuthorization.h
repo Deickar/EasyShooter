@@ -5,6 +5,8 @@
 
 #include "UI/IUIPage.h"
 
+#include <FireNet-Core>
+
 class CPageAuthorizationEventListener : public IUIElementEventListener
 {
 public:
@@ -16,18 +18,19 @@ public:
 class CPageAuthorization : public IUIPage
 {
 public:
-	CPageAuthorization(const char* name) : IUIPage(name)
-	{
-		Init(); 
-	};
-	~CPageAuthorization();
+	CPageAuthorization(const char* name) : IUIPage(name, &m_EventListener) {}
+public:
 	// IUIPage
-	virtual void Init() override;
-	virtual void LoadPage() override;
-	virtual void UnloadPage() override;
-	virtual void ShowPage() override;
-	virtual void HidePage() override;
-	virtual void ReloadPage() override;
+	virtual void OnLoadPage(bool loaded) override
+	{
+		if (loaded)
+		{
+			// Call load background function
+			SUIArguments args;
+			args.AddArgument("backgrounds/main_menu.png");
+			pElement->CallFunction("LoadBackground", args);
+		}
+	}
 	// ~IUIPage
 private:
 	CPageAuthorizationEventListener m_EventListener;

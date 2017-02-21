@@ -49,6 +49,8 @@ CUIManager::CUIManager()
 
 CUIManager::~CUIManager()
 {
+	UnloadAll();
+
 	SAFE_DELETE(pPageAuthorization);
 	SAFE_DELETE(pPageInGame);
 	SAFE_DELETE(pPageLoading);

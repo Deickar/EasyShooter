@@ -16,19 +16,20 @@ public:
 class CPageShop : public IUIPage
 {
 public:
-	CPageShop(const char* name) : IUIPage(name) 
-	{
-		Init();
-	};
-	~CPageShop();
+	CPageShop(const char* name) : IUIPage(name, &m_EventListener) {}
+public:
 	// IUIPage
-	virtual void Init() override;
-	virtual void LoadPage() override;
-	virtual void UnloadPage() override;
-	virtual void ShowPage() override;
-	virtual void HidePage() override;
-	virtual void ReloadPage() override;
-	//
+	virtual void OnLoadPage(bool loaded) override
+	{
+		if (loaded)
+		{
+			// Call load background function
+			SUIArguments args;
+			args.AddArgument("backgrounds/error.png");
+			pElement->CallFunction("LoadBackground", args);
+		}
+	}
+	// ~IUIPage
 private:
 	CPageShopEventListener m_EventListener;
 };

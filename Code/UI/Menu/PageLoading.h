@@ -10,17 +10,27 @@ class CPageLoading : public IUIPage
 public:
 	CPageLoading(const char* name) : IUIPage(name) 
 	{
-		Init();
-	};
-	~CPageLoading();
+		m_Background = "backgrounds/loading.png";
+		m_LoadingText = "@ui_level_loading";
+	}
+public:
 	// IUIPage
-	virtual void Init() override;
-	virtual void LoadPage() override;
-	virtual void UnloadPage() override;
-	virtual void ShowPage() override;
-	virtual void HidePage() override;
-	virtual void ReloadPage() override;
-	//
+	virtual void OnLoadPage(bool loaded)
+	{
+		if (loaded)
+		{
+			// Call set loading text
+			SUIArguments load_args;
+			load_args.AddArgument(m_LoadingText);
+			pElement->CallFunction("SetLoadingStatus", load_args);
+
+			// Call load background function
+			SUIArguments bg_args;
+			bg_args.AddArgument(m_Background);
+			pElement->CallFunction("LoadBackground", bg_args);
+		}
+	}
+	// ~IUIPage
 	void SetBackground(const char* name) { m_Background = name; };
 	void SetLoadingText(const char* text) { m_LoadingText = text; };
 private:

@@ -9,6 +9,8 @@
 
 #include <CryCore/Platform/platform_impl.inl>
 
+#include <CryExtension/ICryPluginManager.h>
+
 IEntityRegistrator *IEntityRegistrator::g_pFirst = nullptr;
 IEntityRegistrator *IEntityRegistrator::g_pLast = nullptr;
 
@@ -22,14 +24,22 @@ CGamePlugin::~CGamePlugin()
 		pTemp = pTemp->m_pNext;
 	}
 
+	// Unload UI
+	SAFE_DELETE(mEnv->pUIManager);
+
 	// Unload listeners
-	if (gEnv && gEnv->pSystem)
+	if (gEnv->pSystem)
 		gEnv->pSystem->GetISystemEventDispatcher()->RemoveListener(this);
+
+	CryLog("[Game] Unloaded.");
 }
 
 bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams)
 {
 	gEnv->pSystem->GetISystemEventDispatcher()->RegisterListener(this);
+
+//	gEnv->pSystem->GetIPluginManager()->LoadPluginFromDisk(ICryPluginManager::EPluginType::EPluginType_CPP, "FireNetCore", "FireNetCore_Plugin");
+
 	return true;
 }
 
@@ -180,7 +190,9 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 				if (reason == 0)
 					errorString.AddArgument("@ui_connection_timeout");
 				else if (reason == 1)
-					errorString.AddArgument("@ui_connection_error");
+					errorString.AddArgument("@ui_connection_refused");
+				else
+					errorString.AddArgument("@ui_unknown_connection_error");
 
 
 				pElement->CallFunction("SetErrorText", errorString);

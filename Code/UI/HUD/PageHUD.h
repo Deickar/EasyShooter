@@ -16,18 +16,15 @@ public:
 class CPageHUD : public IUIPage
 {
 public:
-	CPageHUD(const char* name) : IUIPage(name)
-	{
-		Init();
-	};
-	~CPageHUD();
+	CPageHUD(const char* name) : IUIPage(name, &m_EventListener) {}
+public:
 	// IUIPage
-	virtual void Init() override;
-	virtual void LoadPage() override;
-	virtual void UnloadPage() override;
-	virtual void ShowPage() override;
-	virtual void HidePage() override;
-	virtual void ReloadPage() override;
+	virtual void OnLoadPage(bool loaded) override
+	{
+		if (loaded)
+		{
+		}
+	}
 	// ~IUIPage
 private:
 	IUIElement* pElement;
