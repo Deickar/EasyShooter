@@ -5,8 +5,6 @@
 
 #include "UI/IUIPage.h"
 
-#include <FireNet-Core>
-
 class CPageAuthorizationEventListener : public IUIElementEventListener
 {
 public:

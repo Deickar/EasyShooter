@@ -1,3 +1,3 @@
 C++;EasyShooter;EasyShooter_Plugin;bin/win_x64/Game.dll;Game
-C++;FireNetCore;FireNetCore_Plugin;bin/win_x64/FireNet-Core.dll
-C++;FireNetClient;FireNetClient_Plugin;bin/win_x64/FireNet-Client.dll
+C++;FireNet-Core;FireNetCore_Plugin;bin/win_x64/CryFireNetCore.dll
+C++;FireNet-Client;FireNetClient_Plugin;bin/win_x64/CryFireNetClient.dll

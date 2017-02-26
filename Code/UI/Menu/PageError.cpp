@@ -3,6 +3,7 @@
 
 #include "StdAfx.h"
 #include "PageError.h"
+#include "GamePlugin.h"
 
 void CPageErrorEventListener::OnUIEvent(IUIElement * pSender, const SUIEventDesc & event, const SUIArguments & args)
 {
@@ -10,6 +11,7 @@ void CPageErrorEventListener::OnUIEvent(IUIElement * pSender, const SUIEventDesc
 
 	if (strcmp(event.sDisplayName, "OnAccept") == 0)
 	{
+		mEnv->pUIManager->pPageError->UnloadPage();
 		gEnv->pSystem->Quit();
 	}
 }

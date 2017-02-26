@@ -3,11 +3,12 @@
 
 #pragma once
 
-#include <FireNet-Core>
-
 #include <CrySystem/ICryPlugin.h>
+
 #include <CryGame/IGameFramework.h>
 #include <CryEntitySystem/IEntityClass.h>
+
+#include <FireNet>
 
 class CGamePlugin 
 	: public ICryPlugin
@@ -19,7 +20,7 @@ public:
 	CRYGENERATE_SINGLETONCLASS(CGamePlugin, "EasyShooter_Plugin", 0x8E1DC2F5933642E1, 0x8F42F40C965DCA8D)
 
 	virtual ~CGamePlugin();
-	
+
 	// ICryPlugin
 	virtual const char* GetName() const override { return "EasyShooter"; }
 	virtual const char* GetCategory() const override { return "Game"; }
@@ -34,7 +35,8 @@ public:
 	// IFireNetEventListener
 	virtual void OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args = SFireNetEventArgs());
 	// ~IFireNetEventListener
-
+private:
+	bool        InitFireNet();
 public:
 	template<class T>
 	struct CObjectCreator : public IGameObjectExtensionCreatorBase

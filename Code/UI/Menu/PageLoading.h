@@ -17,7 +17,7 @@ public:
 	// IUIPage
 	virtual void OnLoadPage(bool loaded)
 	{
-		if (loaded)
+		if (loaded && pElement)
 		{
 			// Call set loading text
 			SUIArguments load_args;

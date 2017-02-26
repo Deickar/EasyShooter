@@ -18,8 +18,6 @@
 
 #include "HUD/PageHUD.h"
 
-#define TITLE "[UIManager] "
-
 CUIManager::CUIManager()
 	: bIsInit(false)
 {

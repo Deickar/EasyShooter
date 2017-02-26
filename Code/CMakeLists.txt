@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 3.6.0)
 project (Game VERSION 1.0 LANGUAGES CXX)
 
 if (${CMAKE_GENERATOR} MATCHES "^Visual Studio")
+	ADD_DEFINITIONS("/ZI")
 	# Set startup project to launch Game.exe with this project
 	configure_file ("Game.vcxproj.user.in" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.vcxproj.user")
 	set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
@@ -163,7 +164,8 @@ endif (OPTION_PCH AND MSVC)
 
 add_library(${PROJECT_NAME} MODULE ${SOURCE})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/FireNetCommon)
+# FireNet includes
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/FireNet)
 target_link_libraries(${PROJECT_NAME} PRIVATE CryCommon CryAction)
 
 if (WIN32)

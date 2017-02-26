@@ -3,6 +3,8 @@
 
 #pragma once
 
+#define TITLE "[GamePlugin] "
+
 class CUIManager;
 
 struct SPluginEnv

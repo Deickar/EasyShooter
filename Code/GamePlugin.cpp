@@ -7,9 +7,9 @@
 #include "UI/UIManager.h"
 #include "UI/Menu/PageLoading.h"
 
-#include <CryCore/Platform/platform_impl.inl>
-
 #include <CryExtension/ICryPluginManager.h>
+#include <CryCore/Platform/platform_impl.inl>
+#include <FireNet.inl>
 
 IEntityRegistrator *IEntityRegistrator::g_pFirst = nullptr;
 IEntityRegistrator *IEntityRegistrator::g_pLast = nullptr;
@@ -31,15 +31,12 @@ CGamePlugin::~CGamePlugin()
 	if (gEnv->pSystem)
 		gEnv->pSystem->GetISystemEventDispatcher()->RemoveListener(this);
 
-	CryLog("[Game] Unloaded.");
+	CryLogAlways(TITLE "Unloaded.");
 }
 
 bool CGamePlugin::Initialize(SSystemGlobalEnvironment& env, const SSystemInitParams& initParams)
 {
 	gEnv->pSystem->GetISystemEventDispatcher()->RegisterListener(this);
-
-//	gEnv->pSystem->GetIPluginManager()->LoadPluginFromDisk(ICryPluginManager::EPluginType::EPluginType_CPP, "FireNetCore", "FireNetCore_Plugin");
-
 	return true;
 }
 
@@ -47,6 +44,11 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 {
 	switch (event)
 	{
+	case ESYSTEM_EVENT_PRE_RENDERER_INIT:
+	{
+		InitFireNet();
+		break;
+	}
 	case ESYSTEM_EVENT_GAME_POST_INIT:
 	{
 		// Register entities
@@ -58,19 +60,20 @@ void CGamePlugin::OnSystemEvent(ESystemEvent event, UINT_PTR wparam, UINT_PTR lp
 		}
 		break;
 	}
-	case ESYSTEM_EVENT_GAME_FRAMEWORK_INIT_DONE:
+	//case ESYSTEM_EVENT_GAME_FRAMEWORK_INIT_DONE:
+	case ESYSTEM_EVENT_GAME_POST_INIT_DONE :
 	{
 		if (!gEnv->IsDedicated())
 		{
 			// Load UI Manager
-			mEnv->pUIManager = new CUIManager();				
-		}
+			mEnv->pUIManager = new CUIManager();	
+		}	
 
 		// Start connect to FireNet
-		if (gEnv->pFireNetCore && !gEnv->IsEditor())
+		if (gFireNet && gFireNet->pCore && !gEnv->IsEditor())
 		{
-			gEnv->pFireNetCore->RegisterFireNetListener(this);
-			gEnv->pFireNetCore->ConnectToMasterServer();
+			gFireNet->pCore->RegisterFireNetListener(this);
+			gFireNet->pCore->ConnectToMasterServer();
 		}
 
 		break;
@@ -374,6 +377,33 @@ void CGamePlugin::OnFireNetEvent(EFireNetEvents event, SFireNetEventArgs& args)
 	default:
 		break;
 	}
+}
+
+bool CGamePlugin::InitFireNet()
+{
+	CryLogAlways(TITLE "Loading FireNet...");
+
+	//	gEnv->pSystem->GetIPluginManager()->LoadPluginFromDisk(ICryPluginManager::EPluginType::EPluginType_CPP, "FireNet-Core", "FireNetCore_Plugin");
+
+	if (auto pPluginManager = gEnv->pSystem->GetIPluginManager())
+	{
+		if (auto pPlugin = pPluginManager->QueryPlugin<IFireNetCorePlugin>())
+		{
+			if ((gFireNet = pPlugin->GetFireNetEnv()) != nullptr)
+			{
+				CryLogAlways(TITLE "FireNet successfully loaded");
+				return true;
+			}
+			else
+				CryWarning(VALIDATOR_MODULE_NETWORK, VALIDATOR_ERROR, TITLE "Error init FireNet - Can't get FireNet environment pointer!");
+		}
+		else
+			CryWarning(VALIDATOR_MODULE_NETWORK, VALIDATOR_ERROR, TITLE "Error init FireNet - Can't get Plugin!");
+	}
+	else
+		CryWarning(VALIDATOR_MODULE_NETWORK, VALIDATOR_ERROR, TITLE "Error init FireNet - Can't get factory!");
+	
+	return false;
 }
 
 CRYREGISTER_SINGLETON_CLASS(CGamePlugin)
